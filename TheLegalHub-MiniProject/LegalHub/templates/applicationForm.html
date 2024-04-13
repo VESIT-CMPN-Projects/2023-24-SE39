@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an appointment</title>
+    <link rel="stylesheet" href="../static/css/applicationForm.css">
+</head>
+<body>
+
+    <h2>Book an appointment</h2>
+        <div class="container">
+            <a href="{{ url_for('index')}}" class="back-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M20 11H7.414l4.293-4.293a1 1 0 1 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z">
+                    </path>
+                </svg>
+            </a>
+            <form action="process-appointment.php" method="post">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+    
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+    
+                <label for="caseDescription">Brief Description of the Legal Issue:</label>
+                <textarea id="caseDescription" name="caseDescription" rows="4" required></textarea>
+    
+                <label for="legalService">Legal Service Requested:</label>
+                <select id="legalService" name="legalService" required>
+                    <option value="consultation">Consultation</option>
+                    <option value="representation">Representation</option>
+                </select>
+    
+                <label for="legalArea">Legal Area:</label>
+                <input type="text" id="legalArea" name="legalArea" required>
+    
+                <label for="preferredDateTime">Preferred Date and Time:</label>
+                <input type="datetime-local" id="preferredDateTime" name="preferredDateTime" required>
+    
+                <label for="communicationMethod">Preferred Method of Communication:</label>
+                <select id="communicationMethod" name="communicationMethod" required>
+                    <option value="inPerson">In Person</option>
+                    <option value="phone">Phone</option>
+                    <option value="video">Video</option>
+                </select>
+    
+                <label for="documentsEvidence">Documents and Evidence (if available):</label>
+                <input type="file" id="documentsEvidence" name="documentsEvidence">
+    
+                <label for="referralSource">How Did You Hear About Us:</label>
+                <input type="text" id="referralSource" name="referralSource">
+
+                <div class="consent-label">
+                    <input class="inlineinput" id="consentAgreement" name="consentAgreement" type="checkbox" required>
+                    <label for="consentAgreement">
+                        I acknowledge the terms and conditions of legal representation.
+                    </label>
+                </div>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        
+</body>
+</html>

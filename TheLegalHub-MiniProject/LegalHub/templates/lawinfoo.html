@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawsinfo</title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/lawinfoo.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo1.png') }}" alt="Logo" />
+            </div>
+            <div class="links">
+                <ul>
+                    <li>
+                        <a href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('index') }}#find-a-lawyer">Find a lawyer</a>
+                    </li>                    
+                    <li>
+                        <a href="{{ url_for('index') }}#select-a-law">Laws</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('templatess') }}">Templates</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('legalCases') }}">Previous Cases</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('signup') }}" class="active">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar" id="sidebar">
+        <!-- Sidebar buttons will be dynamically generated here -->
+    </div>
+    <div class="content" id="content">
+        <!-- Content goes here -->
+    </div>
+    <script>
+        var jsonDataUrl = "{{ url_for('static', filename='laws_data/') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/lawsinfoo.js') }}"></script>
+</body>
+</html>

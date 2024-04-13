@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.search-sort-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#searchInput {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+}
+
+#searchButton {
+    margin-bottom: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#sortByFilter {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+.disclaimerCard {
+
+    background-color:  #ffcccc;
+    margin:0 auto;
+    margin-right:60px;
+    margin-left:60px; 
+    padding: 15px;
+    border-radius: 8px;
+    animation: beat 1s infinite alternate;
+    overflow-x: hidden;
+}
+
+@keyframes beat {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.disclaimerCard p {
+    font-weight:1000;
+    font-style: italic; 
+    font-size: 1.15em;
+    color: #333;
+}
+.closeBtn {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #000;
+}
+.case-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 20px;
+}
+
+.legalCaseBox {
+    width: calc(100% - 40px); 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.legalCaseBox .content {
+    max-height: 130px; 
+    overflow: hidden;
+
+}
+
+.legalCaseBox .readMoreBtn {
+    display: inline-block;
+    margin-top:12px;
+    padding: 10px 14px;
+    background-color: #44576D; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+}
+
+.legalCaseBox .readMoreBtn:hover {
+    background-color: #304560; 
+    transform: scale(1.1);
+}
+h3 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+p {
+    font-size: 20px;
+}

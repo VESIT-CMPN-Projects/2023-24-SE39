@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <style>
+        body{
+            background-color: #e6e6e6;
+        }
+        #responseContainer{
+            background-color: #e6e6e6;
+            text-align: left;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-wrap: break-word;
+            overflow-y: auto;
+            width: 650px;
+            max-height: 250px;
+            margin:auto;
+            margin-top: 20px;
+           
+        }
+        
+        .chatbody{
+            position:relative;
+            height: 75vh;
+            background-color: white;
+            text-align: center;
+            padding: 30px;
+            padding-bottom: 0;
+            margin: 100px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        .SubmitButton{
+            border: none;
+            background-color: #aac7d8;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        #inputText{
+            height: 30px;
+            width: 300px;
+        }
+        .back-arrow{
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="chatbody">
+        <a href="{{ url_for('index') }}" class="back-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M20 11H7.414l4.293-4.293a1 1 0 1 0-1.414-1.414l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L7.414 13H20a1 1 0 0 0 0-2z">
+                </path>
+            </svg>
+        </a>
+    <h1>Meet Your Virtual Legal Assistant</h1>
+    <h2>LegalGenie</h2>
+    <form id="myForm">
+        <!-- <label for="inputText">Enter Text:</label> -->
+        <input type="text" id="inputText" name="inputText" required placeholder="Have a legal Issue?">
+        <button type="button" class="SubmitButton" onclick="submitForm()">Submit</button>
+    </form>
+
+    <div id="responseContainer">
+        Your text will be generated here
+    </div>
+
+    </div>
+
+    <script>
+        function submitForm() {
+            var inputText = document.getElementById("inputText").value;
+
+            // Check if the input field is empty
+            if (inputText.trim() === "") {
+                alert("Please fill in the input field.");
+                return;
+            }
+
+            // Display "Loading..." while processing
+            document.getElementById("responseContainer").innerHTML = "Loading...";
+
+            // Send the input to the backend using fetch
+            fetch('/process_input', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ inputText: inputText }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the response in the responseContainer
+                document.getElementById("responseContainer").innerHTML = data.response;
+            });
+        }
+    </script>
+
+</body>
+</html>
