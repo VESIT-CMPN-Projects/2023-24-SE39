@@ -8,13 +8,13 @@
  monetization approaches that blend accessibility with sustainability.
 
  ## **Features**
--User-friendly Interface: Allows users to easily navigate and search for specific laws and legal information.
+* User-friendly Interface: Allows users to easily navigate and search for specific laws and legal information.
 
--Categorised Content: Organising laws into categories such as criminal, civil, taxation, family, intellectual property, etc., making it easier for users to find relevant information.
+* Categorised Content: Organising laws into categories such as criminal, civil, taxation, family, intellectual property, etc., making it easier for users to find relevant information.
 
--Search Functionality: Enables users to search for laws using keywords, act names, sections, or specific legal topics.
+* Search Functionality: Enables users to search for laws using keywords, act names, sections, or specific legal topics.
 
--LegalGenie: An AI  gemini chatbot to solve legal problems.
+* LegalGenie: An AI  gemini chatbot to solve legal problems.
 
 ## **Team Members**
 ### Group 39
